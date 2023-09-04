@@ -6,3 +6,5 @@ rm main.o
 rm memory.o
 rm value.o
 rm vm.o
+rm compiler.o
+rm scanner.o
