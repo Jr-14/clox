@@ -2,7 +2,7 @@ CC = gcc
 SRCDIR = src
 BINDIR = bin
 CFLAGS = -I$(SRCDIR) -Wall
-DEPS = $(SRCDIR)/common.h
+DEPS = $(SRCDIR)/common.h $(SRCDIR)/chunk.h
 OBJ = $(BINDIR)/main.o
 
 $(BINDIR)/%.o: $(SRCDIR)/%.c $(DEPS)
