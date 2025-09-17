@@ -53,3 +53,5 @@ dkms.conf
 
 # Binary files
 main
+
+bin
