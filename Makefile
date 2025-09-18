@@ -1,4 +1,4 @@
-CC = gcc
+CC = clang
 SRCDIR = src
 BINDIR = bin
 CFLAGS = -I$(SRCDIR) -Wall
