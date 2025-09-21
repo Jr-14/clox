@@ -19,7 +19,7 @@ We want it to be portable essentially. If we compile to native code, we will hav
 architecture, and there are many architectures around.
 
 ## Why Bytecode
-Bytecode resembles machide code. It's a dense, linear sequence of binary instructions. This keeps overhead low and
+Bytecode resembles machine code. It's a dense, linear sequence of binary instructions. This keeps overhead low and
 plays nicely with the cache. However, this requires an *emulator* to run, to simulate the bytecode. E.g. a
 *Virtual Machine*, but this adds a bit of overhead, however it is still faster than walking the AST.
 
@@ -27,7 +27,7 @@ plays nicely with the cache. However, this requires an *emulator* to run, to sim
 For the bytecode format, each instruction has a one-byte operation code (universally shorted to **opcode**). The number
 controls what kind of instruction we're dealing with. E.g. add, subtract, look up variable, etc.
 
-Each opcode determines how many operand bytes it has and what they mean. Each time we add a new opcode, we specificy
+Each opcode determines how many operand bytes it has and what they mean. Each time we add a new opcode, we specify
 what its operands look like - its **instruction format**.
 
 ### Constant Values
@@ -73,3 +73,9 @@ bytecode, disassembling each instruction.
 - Read a single byte from the bytecode at the given offset. This is the **opcode**.
 - Switch on the type of **opcode** or instruction, and dispatch a utility function for displaying it.
 - Also print any instruction/**opcode** it doesn't understand.
+
+# 15 VM
+- Static VM instance? A singleton makes the design much simpler.
+- VM works its way through the bytecode, keeping trakc of where it is, the location of the instruction currently being
+executed. The name **IP** or **Instruction Pointer**. This always points to the next instruction, not the one currently
+beig handled.
